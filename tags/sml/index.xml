@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SML on Zaft Memory Core</title><link>https://davmig.github.io/tags/sml/</link><description>Recent content in SML on Zaft Memory Core</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 30 Dec 2019 09:00:00 +0000</lastBuildDate><atom:link href="https://davmig.github.io/tags/sml/index.xml" rel="self" type="application/rss+xml"/><item><title>Standard ML notes</title><link>https://davmig.github.io/posts/2019-12-30-standardml-notes/</link><pubDate>Mon, 30 Dec 2019 09:00:00 +0000</pubDate><guid>https://davmig.github.io/posts/2019-12-30-standardml-notes/</guid><description>&lt;h2 id="basics">Basics&lt;/h2>
+&lt;h3 id="comments">Comments&lt;/h3>
+&lt;pre tabindex="0">&lt;code class="language-ML" data-lang="ML">(* SML comment *)
+&lt;/code>&lt;/pre>&lt;h3 id="variable-bindings-and-expressions">Variable bindings and Expressions&lt;/h3>
+&lt;pre tabindex="0">&lt;code class="language-ML" data-lang="ML">val x = 34;
+(* static environment: x : int *)
+(* dynamic environment: x --&amp;gt; 34 *)
+val y = x + 1;
+
+(* Use tilde character instead of minus to reprsent negation *)
+val z = ~1;
+
+(* Integer Division *)
+val w = y div x
+&lt;/code>&lt;/pre>&lt;p>Strings:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-ML" data-lang="ML">(* `\n`のようなエスケープシーケンスが利用できる *)
+val x = &amp;#34;hello\n&amp;#34;; 
+(* 文字列の連結には&amp;#39;^&amp;#39;を使う *)
+val y = &amp;#34;hello &amp;#34; ^ &amp;#34;world&amp;#34;;
+&lt;/code>&lt;/pre>&lt;p>An ML program is a sequence of bindings. Each binding gets &lt;strong>type-checked&lt;/strong> and then &lt;strong>evaluated&lt;/strong>.
+What type a binding has depends on a static environment. How a binding is evaluated depends on a dynamic environment.
+Sometimes we use just &lt;code>environment&lt;/code> to mean dynamic environment and use &lt;code>context&lt;/code> as a synonym for static environment.&lt;/p></description></item></channel></rss>

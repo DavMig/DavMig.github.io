@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RPA on Zaft Memory Core</title><link>https://davmig.github.io/tags/rpa/</link><description>Recent content in RPA on Zaft Memory Core</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 23 Nov 2019 09:00:00 +0000</lastBuildDate><atom:link href="https://davmig.github.io/tags/rpa/index.xml" rel="self" type="application/rss+xml"/><item><title>uipath ノート（三）- uipath orchestrator</title><link>https://davmig.github.io/posts/2019-11-23-uipath-orchestrator/</link><pubDate>Sat, 23 Nov 2019 09:00:00 +0000</pubDate><guid>https://davmig.github.io/posts/2019-11-23-uipath-orchestrator/</guid><description>&lt;h2 id="利用手順">利用手順&lt;/h2>
+&lt;p>Official doc: &lt;a href="https://docs.uipath.com/robot/docs/from-orchestrator-and-the-orchestrator-settings-window">https://docs.uipath.com/robot/docs/from-orchestrator-and-the-orchestrator-settings-window&lt;/a>&lt;/p>
+&lt;h3 id="マシンを追加">マシンを追加&lt;/h3>
+&lt;p>マシン側でマシン名とユーザ名を確認&lt;/p>
+&lt;pre tabindex="0">&lt;code>C:\Users\user&amp;gt;hostname
+DESKTOP-ABCDE5F
+
+C:\Users\user&amp;gt;whoami
+desktop-abcde5f\user
+
+C:\Users\user&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>追加完了後、マシンキーを取得する。&lt;/p>
+&lt;h3 id="ロボットを登録">ロボットを登録&lt;/h3>
+&lt;ul>
+&lt;li>Type: studio (開発用？)&lt;/li>
+&lt;li>Domain/Username: 上記のユーザ名&lt;/li>
+&lt;/ul>
+&lt;h3 id="ローカルのorchestrator設定">ローカルのorchestrator設定&lt;/h3>
+&lt;p>Uipath Robotを開き⇒orchestratorの設定で、上記のマシンキーを入力する。
+orchestrator URLに &lt;code>https://platform.uipath.com/&lt;/code> を入力する.
+&lt;code>Invalid machine key&lt;/code>というエラーが出たら、下記のようなURLを試す：&lt;/p>
+&lt;pre tabindex="0">&lt;code>https://platform.uipath.com/&amp;lt;account name&amp;gt;/&amp;lt;service name&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>参照：&lt;a href="https://forum.uipath.com/t/uipath-orchestrator-error-invalid-machine-key/153438/16">Uipath orchestrator error : invalid machine key&lt;/a>&lt;/p>
+&lt;h3 id="ロボットグループenvironment作成">ロボットグループ(Environment)作成&lt;/h3>
+&lt;h3 id="プロジェクトをパブリッシュpublish">プロジェクトをパブリッシュ(Publish)&lt;/h3>
+&lt;h3 id="プロセスを追加">プロセスを追加&lt;/h3>
+&lt;p>Automations　⇒　Processes&lt;/p>
+&lt;h3 id="ジョブjobsの実行">ジョブ(Jobs)の実行&lt;/h3>
+&lt;p>Monitoring　⇒　Jobs&lt;/p>
+&lt;h2 id="その他">その他&lt;/h2>
+&lt;h3 id="再パブリッシュするとprocessが最新バージョンを使うため変更作業が必要">再パブリッシュすると、Processが最新バージョンを使うため、変更作業が必要&lt;/h3>
+&lt;p>Processes　⇒　More Options　⇒　View Process　⇒　最新のバージョンに切り替える&lt;/p>
+&lt;h3 id="ジョブの停止">ジョブの停止&lt;/h3>
+&lt;ul>
+&lt;li>停止(Stop)：必ずワークフロー内で「停止すべきか確認(Should Stop)」アクティビティを使用する&lt;/li>
+&lt;li>強制終了(Kill)：処理中の内容に関わらず、ジョブを停止する&lt;/li>
+&lt;/ul>
+&lt;h3 id="アクティブなジョブは削除できない">アクティブなジョブは削除できない&lt;/h3>
+&lt;h3 id="パラメーター変更の優先順位">パラメーター変更の優先順位&lt;/h3>
+&lt;p>ジョブ (Jobs) -&amp;gt; プロセス (Processes) -&amp;gt; パッケージ(UiPath Studio)&lt;/p></description></item><item><title>uipath ノート（二）- Best Practice</title><link>https://davmig.github.io/posts/2019-11-18-uipath-best-practice/</link><pubDate>Mon, 18 Nov 2019 09:00:00 +0000</pubDate><guid>https://davmig.github.io/posts/2019-11-18-uipath-best-practice/</guid><description>&lt;h2 id="時間をかけて各ワークフローに適したレイアウトを選択しましょう">時間をかけて各ワークフローに適したレイアウトを選択しましょう。&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>メイン: フローチャートまたはステートマシン&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ビジネスロジック: フローチャート&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>UI インタラクション: シーケンス&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>フローチャートを使用することで、入れ子状の IF を回避&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="プロセスを小さなワークフローに分割しましょう">プロセスを小さなワークフローに分割しましょう。&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>分割したものを個別に開発、テスト&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ワークフローの再利用&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>分割ファイルで作業することによる、より効率的な共同作業&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="必ず例外を処理しましょう">必ず例外を処理しましょう。&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>例外が発生しやすいワークフローを [Try Catch (トライキャッチ)] ブロックに配置&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>外部から呼び出されたワークフローでも同様&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>リカバリシーケンスの設定&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="ワークフローを読みやすいものにしましょう">ワークフローを読みやすいものにしましょう。&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>すべてのコンポーネントにわかりやすい名前を選択&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>注記やコメントの使用&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>リアルタイムの実行状況のログ取得&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>環境設定を Config ファイルに格納&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="不要になったアプリケーションを終了させることで常にクリーンな状態を維持しましょう">不要になったアプリケーションを終了させることで、常にクリーンな状態を維持しましょう。&lt;/h2></description></item><item><title>uipath ノート（一）</title><link>https://davmig.github.io/posts/2019-10-27-uipath/</link><pubDate>Sun, 27 Oct 2019 09:00:00 +0000</pubDate><guid>https://davmig.github.io/posts/2019-10-27-uipath/</guid><description>&lt;h2 id="変数">変数&lt;/h2>
+&lt;ul>
+&lt;li>Int32&lt;/li>
+&lt;li>String&lt;/li>
+&lt;li>Boolean&lt;/li>
+&lt;li>GenericValue　&lt;a href="https://docs.uipath.com/studio/lang-ja/docs/genericvalue-variables">参照&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>UiPath Studio には GenericValue 変数の自動変換メカニズムがあり、式を正しく定義することで、目的の結果を得ることができます。式の最初の要素は、Studio から操作するガイドラインとして使用されることを考慮してください。例えば、2 つの GenericValue 変数を追加し、式の最初の変数が String として定義されてた場合、最初に代入された値を元に 2 つの値を結合し、文字列となります。 Integer として定義した場合の結果は、合計の値となります。&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>Array&lt;/li>
+&lt;li>DataTime&lt;/li>
+&lt;li>DataTable&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://docs.uipath.com/studio/lang-ja/docs/managing-variables#section-browsing-for-net-variable-types">.Net 変数型を参照して探す方法&lt;/a>&lt;/p>
+&lt;h2 id="アクティビティ">アクティビティ&lt;/h2>
+&lt;h3 id="レイアウトダイアグラム">レイアウトダイアグラム&lt;/h3>
+&lt;ul>
+&lt;li>シーエンス：　より高度で複雑な自動化に向こう&lt;/li>
+&lt;li>フローチャート：　シンプルな自動化プロジェクトに適している&lt;/li>
+&lt;li>ステートマシン&lt;/li>
+&lt;li>Global Exception Handler (グローバル例外ハンドラー)&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>参照：&lt;a href="https://docs.uipath.com/studio/lang-ja/docs/workflow-design">https://docs.uipath.com/studio/lang-ja/docs/workflow-design&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="選択肢">選択肢&lt;/h3>
+&lt;ul>
+&lt;li>条件分岐(If)：　シーケンス用条件分岐&lt;/li>
+&lt;li>フロー条件分岐(flow desicion)：　フローチャート用条件分岐&lt;/li>
+&lt;li>フロースイッチ (Flow Switch)&lt;/li>
+&lt;/ul>
+&lt;h3 id="繰り返し">繰り返し&lt;/h3>
+&lt;ul>
+&lt;li>繰り返し（前判定）(While)&lt;/li>
+&lt;li>繰り返し（後判定）(Do While)&lt;/li>
+&lt;li>繰り返し（コレクションの各要素）(For Each)&lt;/li>
+&lt;/ul>
+&lt;h3 id="データ操作">データ操作&lt;/h3>
+&lt;ul>
+&lt;li>CSVを読み込み(Read CSV)
+&lt;ul>
+&lt;li>オプションにエンコーディングを指定できる（日本語データがある場合、&lt;code>&amp;quot;SHIFT-JIS&amp;quot;&lt;/code>を指定する）&lt;/li>
+&lt;li>列名を含める(IncludeColumnNames)を指定できる&lt;/li>
+&lt;li>出力タイプ：&lt;code>System.Data.DataTable&lt;/code> &lt;a href="https://docs.microsoft.com/ja-jp/dotnet/api/system.data.datatable?view=netframework-4.8">Microsoft Docs&lt;/a>&lt;/li>
+&lt;li>&lt;code>Select&lt;/code>メソッドで半角スペースを含む列名で指定する場合、半角スペースが特殊文字ではなく文字列として認識されるため、&lt;code>[]&lt;/code>で列名を囲う&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>Names.Select(&amp;#34;[メンバー ステータス] = &amp;#39;Yes&amp;#39;&amp;#34;)
+&lt;/code>&lt;/pre>&lt;h3 id="その他">その他&lt;/h3>
+&lt;ul>
+&lt;li>メッセージボックス&lt;/li>
+&lt;li>代入(assign)&lt;/li>
+&lt;li>待機 (Delay)&lt;/li>
+&lt;li>入力ダイアログ（input dialog）:&lt;/li>
+&lt;li>フォルダーを選択(Select Folder)&lt;/li>
+&lt;li>一行を書き込み(Write Line)：　Debug用？&lt;/li>
+&lt;li>アプリケーションを開く(Open Application)&lt;/li>
+&lt;li>ブラウザを開く(Open Browser)&lt;/li>
+&lt;li>ブラウザーにアタッチ(Attach Browser)&lt;/li>
+&lt;li>文字を入力(Type Into)&lt;/li>
+&lt;li>ハイライト(Highlight)&lt;/li>
+&lt;li>&lt;a href="#%E3%82%A2%E3%83%B3%E3%82%AB%E3%83%BC%E3%83%99%E3%83%BC%E3%82%B9-Anchor-Base">アンカーベース(Anchor Base)&lt;/a>&lt;/li>
+&lt;li>スクリーンショットをと撮る(Take Screenshot)&lt;/li>
+&lt;li>要素の有無を検出(Element Exists)&lt;/li>
+&lt;li>要素の消滅を待つ(Wait Element Vanish)&lt;/li>
+&lt;/ul>
+&lt;h2 id="レコーディング機能">レコーディング機能&lt;/h2>
+&lt;p>&lt;!-- raw HTML omitted -->[○]レコーディング可&lt;!-- raw HTML omitted -->&lt;/p></description></item></channel></rss>
