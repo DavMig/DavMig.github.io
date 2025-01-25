@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zaft Memory Core</title><link>https://davmig.github.io/</link><description>Recent content on Zaft Memory Core</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 27 Jun 2021 09:00:00 +0000</lastBuildDate><atom:link href="https://davmig.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Code Block Test</title><link>https://davmig.github.io/posts/code-block-test/</link><pubDate>Sun, 27 Jun 2021 09:00:00 +0000</pubDate><guid>https://davmig.github.io/posts/code-block-test/</guid><description>&lt;p>&lt;code>String&lt;/code>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Zaft Memory Core</title><link>https://davmig.github.io/</link><description>Recent content on Zaft Memory Core</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Jan 2025 17:51:42 +0000</lastBuildDate><atom:link href="https://davmig.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About me</title><link>https://davmig.github.io/about/</link><pubDate>Fri, 03 Jan 2025 17:51:42 +0000</pubDate><guid>https://davmig.github.io/about/</guid><description>&lt;p>I&amp;rsquo;m just an IT guy.&lt;/p></description></item><item><title>Code Block Test</title><link>https://davmig.github.io/posts/code-block-test/</link><pubDate>Sun, 27 Jun 2021 09:00:00 +0000</pubDate><guid>https://davmig.github.io/posts/code-block-test/</guid><description>&lt;p>&lt;code>String&lt;/code>&lt;/p>
 &lt;p>Using indents:&lt;/p>
 &lt;pre>&lt;code>text
 text
@@ -799,4 +799,4 @@ iptables -h (print this help information)
 &lt;p>用行动表达我的爱意&lt;/p>
 &lt;p>And it was all Yellow&lt;/p>
 &lt;p>噢这过程充满不安羞怯和点滴暖意&lt;/p>
-&lt;p>Your skin&lt;/p></description></item><item><title>About me</title><link>https://davmig.github.io/about/</link><pubDate>Wed, 24 Aug 2016 17:51:42 +0000</pubDate><guid>https://davmig.github.io/about/</guid><description>&lt;p>Github: &lt;a href="https://github.com/monkeyWzr">monkeyWzr&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>Your skin&lt;/p></description></item></channel></rss>
