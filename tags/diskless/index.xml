@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Diskless on Zaft Memory Core</title><link>https://davmig.github.io/tags/diskless/</link><description>Recent content in Diskless on Zaft Memory Core</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 16 May 2025 09:00:00 +0000</lastBuildDate><atom:link href="https://davmig.github.io/tags/diskless/index.xml" rel="self" type="application/rss+xml"/><item><title>Building a Minimal Debian Rootfs and Diskless Initramfs</title><link>https://davmig.github.io/posts/building-minimal-debian-rootfs-and-diskless-initramfs/</link><pubDate>Fri, 16 May 2025 09:00:00 +0000</pubDate><guid>https://davmig.github.io/posts/building-minimal-debian-rootfs-and-diskless-initramfs/</guid><description>&lt;h1 id="building-a-minimal-debian-rootfs-and-a-diskless-initramfs">Building a Minimal Debian Rootfs and a Diskless Initramfs&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>In previous articles, I described how to deploy a functional Kubernetes cluster.&lt;br>
+The problem appears shortly after: &lt;strong>host system maintenance&lt;/strong>.&lt;/p>
+&lt;p>A traditional OS, installed on disk and updated over time, introduces configuration drift, hard-to-reproduce states, and risky upgrade procedures.&lt;br>
+If the goal is a &lt;strong>Kubernetes cluster with minimal maintenance&lt;/strong>, the underlying system must be:&lt;/p>
+&lt;ul>
+&lt;li>reproducible,&lt;/li>
+&lt;li>immutable,&lt;/li>
+&lt;li>disposable,&lt;/li>
+&lt;li>and able to boot without external dependencies.&lt;/li>
+&lt;/ul>
+&lt;p>This article focuses on building a &lt;strong>diskless operating system&lt;/strong>, fully loaded into RAM, based on a read-only root filesystem, and bootstrapped using a fully controlled initramfs.&lt;/p></description></item></channel></rss>
