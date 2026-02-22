@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Architecture on Zaft Memory Core</title><link>https://davmig.github.io/tags/architecture/</link><description>Recent content in Architecture on Zaft Memory Core</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 22 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://davmig.github.io/tags/architecture/index.xml" rel="self" type="application/rss+xml"/><item><title>Operating Inference as Infrastructure: A GenAI Implementation Journal</title><link>https://davmig.github.io/posts/genai-inference-platform-implementation/</link><pubDate>Sun, 22 Feb 2026 00:00:00 +0000</pubDate><guid>https://davmig.github.io/posts/genai-inference-platform-implementation/</guid><description>&lt;h1 id="operating-inference-as-infrastructure">Operating Inference as Infrastructure&lt;/h1>
+&lt;p>This project started as a side project.&lt;/p>
+&lt;p>But from the beginning, I made a deliberate choice:&lt;br>
+Even as a solo engineer, AI integration would be treated as production infrastructure, not as a feature experiment.&lt;/p>
+&lt;p>The objective was not to “connect an LLM”.&lt;/p>
+&lt;p>The objective was to design inference as a first-class platform capability inside the product.&lt;/p>
+&lt;hr>
+&lt;h2 id="context-the-typical-first-iteration">Context: The Typical First Iteration&lt;/h2>
+&lt;p>The initial implementation looked like most early GenAI integrations:&lt;/p></description></item></channel></rss>
