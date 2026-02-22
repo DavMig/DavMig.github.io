@@ -3,7 +3,4 @@
 &lt;p>But from the beginning, I made a deliberate choice:&lt;br>
 Even as a solo engineer, AI integration would be treated as production infrastructure, not as a feature experiment.&lt;/p>
 &lt;p>The objective was not to “connect an LLM”.&lt;/p>
-&lt;p>The objective was to design inference as a first-class platform capability inside the product.&lt;/p>
-&lt;hr>
-&lt;h2 id="context-the-typical-first-iteration">Context: The Typical First Iteration&lt;/h2>
-&lt;p>The initial implementation looked like most early GenAI integrations:&lt;/p></description></item></channel></rss>
+&lt;p>The objective was to design inference as a first-class platform capability inside the product, so that we can easily onboard new functions that will help me with my business needs.&lt;/p></description></item></channel></rss>
